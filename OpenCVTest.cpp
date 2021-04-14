@@ -1,12 +1,22 @@
-﻿// OpenCVTest.cpp : Defines the entry point for the application.
-//
+﻿#include <iostream>
+#include <opencv2/opencv.hpp>
 
-#include "OpenCVTest.h"
+int main() {
+	cv::VideoCapture cap(0);
 
-using namespace std;
+	if(!cap.isOpened()) {
+		std::cerr << "can't use webcam" << std::endl;
+		return 1;
+	}
 
-int main()
-{
-	cout << "Hello CMake." << endl;
+	while (true) {
+		cv::Mat frame;
+		cap >> frame;
+		cv::imshow("Frame | press q to quit", frame);
+		if (cv::waitKey(30) == 'q') {
+			break;
+		}
+	}
+
 	return 0;
 }
