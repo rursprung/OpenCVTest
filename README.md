@@ -14,7 +14,7 @@ You need to install the following tools:
 
 ### Build Using Visual Studio
 * Install the CMake component in the Visual Studio Installer
-* Set up an environment variable `VCPROJ_ROOT` and set it to the root directory of your vcpkg installation (see also [vcpkg environment](https://vcpkg.readthedocs.io/en/latest/users/config-environment/))
+* Set up an environment variable `VCPKG_ROOT` and set it to the root directory of your vcpkg installation (see also [vcpkg environment](https://vcpkg.readthedocs.io/en/latest/users/config-environment/))
 
 ### Build Using Other Tools
 You can use CMake to generate any project files, incl. standard `Makefile`s. You need to set the `CMAKE_TOOLCHAIN_FILE` parameter to the full path of `vcpkg.cmake` when calling CMake. See [the vcpkg docs](https://vcpkg.readthedocs.io/en/latest/examples/installing-and-using-packages/#cmake).
