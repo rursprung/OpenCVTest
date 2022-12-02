@@ -2,6 +2,8 @@
 #include <opencv2/opencv.hpp>
 
 int main() {
+    bool flip = false;
+
 	cv::VideoCapture cap(0);
 
 	if(!cap.isOpened()) {
@@ -11,12 +13,20 @@ int main() {
 
 	while (true) {
 		cv::Mat frame;
-		cap >> frame;
+        cap >> frame;
+        if (flip)
+            cv::flip(frame, frame, 0);
 		cv::imshow("Frame | press q to quit", frame);
-		if (cv::waitKey(30) == 'q') {
-			break;
-		}
-	}
 
-	return 0;
+        auto key = cv::waitKey(1);
+        switch (key) {
+            case 'f':
+                flip = !flip;
+                break;
+            case 'q':
+                return 0;
+            default:
+                break;
+        }
+	}
 }
