@@ -1,5 +1,9 @@
 {
-  "dependencies": [
-    "opencv4"
-  ]
+  "name" : "opencv-test",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "501cb01e517ee5689577bb01ba8bd1b4c1041a53",
+  "dependencies" : [ {
+    "name" : "opencv",
+    "version>=" : "4.8.0#1"
+  } ]
 }
