@@ -14,8 +14,14 @@ int main() {
 	while (true) {
 		cv::Mat frame;
         cap >> frame;
-        if (flip)
+
+        if (frame.empty()) {
+            break;
+        }
+
+        if (flip) {
             cv::flip(frame, frame, 0);
+        }
 		cv::imshow("Frame | press q to quit", frame);
 
         auto key = cv::waitKey(1);
